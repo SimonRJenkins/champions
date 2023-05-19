@@ -11,6 +11,7 @@ const endorsementsInDB = ref(database, "endorsements")
 
 const inputFieldEl = document.getElementById("input-field")
 const publishButtonEl = document.getElementById("publish-btn")
+const endorsementEl = document.getElementById("endorsement")
 
 publishButtonEl.addEventListener("click", function () {
     let inputValue = inputFieldEl.value
@@ -20,6 +21,54 @@ publishButtonEl.addEventListener("click", function () {
     clearInputFieldEl()
 })
 
+
+
+onValue(endorsementsInDB, function (snapshot) {
+
+    if (snapshot.exists()) {
+        let itemsArray = Object.entries(snapshot.val())
+
+        clearEndorsementsEl()
+
+        for (let i = 0; i < itemsArray.length; i++) {
+            let currentItem = itemsArray[i]
+            let currentItemId = currentItem[0]
+            let currentItemValue = currentItem[1]
+
+            appendItemToEndorsementEl(currentItem)
+        }
+    }
+    else {
+        endorsementEl.textContent = "No current endorsements"
+    }
+
+})
+
+function clearEndorsementsEl() {
+    endorsementEl.innerHTML = ""
+}
+
 function clearInputFieldEl() {
     inputFieldEl.value = ""
+}
+
+function appendItemToEndorsementEl(item) {
+    let itemID = item[0]
+    let itemValue = item[1]
+
+    let newBox = document.createElement("div")
+    let newEl = document.createElement("p")
+
+    newEl.textContent = itemValue
+
+    newBox.classList.add("endorsements")
+    newEl.id = "endorsement"
+
+
+    newEl.addEventListener("click", function () {
+        let exactLocationOfItemInDB = ref(database, `endorsements/${itemID}`)
+        remove(exactLocationOfItemInDB)
+    })
+
+    endorsementEl.append(newEl)
 }
