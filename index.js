@@ -11,7 +11,7 @@ const endorsementsInDB = ref(database, "endorsements")
 
 const inputFieldEl = document.getElementById("input-field")
 const publishButtonEl = document.getElementById("publish-btn")
-const endorsementEl = document.getElementById("endorsement")
+const endorsementEl = document.getElementById("endorsements")
 
 publishButtonEl.addEventListener("click", function () {
     let inputValue = inputFieldEl.value
@@ -45,7 +45,12 @@ onValue(endorsementsInDB, function (snapshot) {
 })
 
 function clearEndorsementsEl() {
-    endorsementEl.innerHTML = ""
+    let endorsementEl = document.getElementById("endorsement")
+
+    if (endorsementEl) {
+
+        endorsementEl.innerHTML = ""
+    }
 }
 
 function clearInputFieldEl() {
