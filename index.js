@@ -62,13 +62,14 @@ function appendItemToEndorsementEl(item) {
     newEl.textContent = itemValue
 
     newBox.classList.add("endorsements")
-    newEl.id = "endorsement"
+    newEl.classList.add("endorsement")
 
+    newBox.appendChild(newEl)
 
     newEl.addEventListener("click", function () {
         let exactLocationOfItemInDB = ref(database, `endorsements/${itemID}`)
         remove(exactLocationOfItemInDB)
     })
 
-    endorsementEl.append(newEl)
+    endorsementEl.appendChild(newBox)
 }
