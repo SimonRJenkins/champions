@@ -45,12 +45,7 @@ onValue(endorsementsInDB, function (snapshot) {
 })
 
 function clearEndorsementsEl() {
-    let endorsementEl = document.getElementById("endorsement")
-
-    if (endorsementEl) {
-
-        endorsementEl.innerHTML = ""
-    }
+    endorsementEl.innerHTML = ""
 }
 
 function clearInputFieldEl() {
