@@ -52,8 +52,18 @@ img {
     font-size: 15px;
     line-height: 18px;
     color: #8F8F8F;
+    padding: 5px 5px 0;
 }
 
+#input-field::placeholder {
+    position: absolute;
+    text-align: left;
+    vertical-align: top;
+    top: 5px;
+    left: 5px;
+    padding-left: 15px;
+    padding-top: 5px;
+}
 
 
 #publish-btn {
@@ -85,5 +95,4 @@ img {
     font-size: 12px;
     line-height: 15px;
     color: #1B1924;
-
 }

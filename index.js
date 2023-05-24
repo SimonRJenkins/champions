@@ -22,7 +22,6 @@ publishButtonEl.addEventListener("click", function () {
 })
 
 
-
 onValue(endorsementsInDB, function (snapshot) {
 
     if (snapshot.exists()) {
@@ -39,7 +38,7 @@ onValue(endorsementsInDB, function (snapshot) {
         }
     }
     else {
-        endorsementEl.textContent = "No current endorsements"
+        //endorsementEl.textContent = "No current endorsements"
     }
 
 })
@@ -61,8 +60,8 @@ function appendItemToEndorsementEl(item) {
 
     newEl.textContent = itemValue
 
-    newBox.classList.add("endorsements")
-    newEl.classList.add("endorsement")
+    newBox.setAttribute("class", "endorsements")
+    newEl.setAttribute("id", "endorsement")
 
     newBox.appendChild(newEl)
 
