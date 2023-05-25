@@ -35,10 +35,12 @@ onValue(endorsementsInDB, function (snapshot) {
             let currentItemValue = currentItem[1]
 
             appendItemToEndorsementEl(currentItem)
+
         }
     }
     else {
-        //endorsementEl.textContent = "No current endorsements"
+        endorsementEl.setAttribute("id", "endorsement")
+        endorsementEl.textContent = "No current endorsements"
     }
 
 })
