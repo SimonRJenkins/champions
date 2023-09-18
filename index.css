@@ -55,6 +55,27 @@ img {
     padding: 5px 5px 0;
 }
 
+.input-container {
+    display: flex;
+    gap: 5px;
+}
+
+#input-to,
+#input-from {
+    background-color: #444059;
+    border-radius: 8px;
+    border: none;
+    margin-top: 5px;
+    width: 156px;
+    height: 40px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    color: #8F8F8F;
+}
+
 #input-field::placeholder {
     position: absolute;
     text-align: left;
@@ -85,8 +106,10 @@ img {
 
 .endorsements {
     width: 317px;
-    height: 72px;
+    height: auto;
     background-color: #FFFFFF;
+    text-align: left;
+    padding-bottom: 5px;
 }
 
 #endorsement {
@@ -96,4 +119,5 @@ img {
     font-size: 12px;
     line-height: 15px;
     color: #1B1924;
+
 }
